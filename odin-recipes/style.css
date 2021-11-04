@@ -1,0 +1,28 @@
+body {
+  background: linear-gradient(#e66465, #9198e5);
+  font-size: 25px;
+}
+
+section,
+h1 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /*global settings for section and h1*/
+}
+
+li {
+  width: 75%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  /* global list settings for UL and OL */
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  /*global image settings*/
+}
