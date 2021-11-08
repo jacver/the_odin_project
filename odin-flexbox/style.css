@@ -1,5 +1,3 @@
-/* table of contents */
-
 /* navbar */
 .nav-flex-container {
   display: flex;
@@ -32,4 +30,41 @@ a:active {
   padding: 10px;
   color: inherit;
   /* these settings will prevent the links from changing colors - easier to see on background */
+}
+
+/* section 2*/
+.section2-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  gap: 50px;
+}
+
+.section2 h2 {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.section2-figure {
+  border: blue solid 2px;
+  border-radius: 10px;
+  height: 100px;
+  flex: 1;
+  width: 140px;
+  height: 100px;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.section2-caption {
+  flex: 1;
+  text-align: center;
+  width: 140px;
+}
+
+.section2-item {
+  margin: 10px;
+  width: 100px;
 }
