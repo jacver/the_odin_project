@@ -1,0 +1,35 @@
+/* table of contents */
+
+/* navbar */
+.nav-flex-container {
+  display: flex;
+  height: 75px;
+  background-color: #1f2937;
+}
+
+.nav-logo {
+  margin-left: 7.5%;
+  flex: 1;
+  width: 100%;
+  font-size: 24px;
+  color: #f9faf8;
+}
+
+.nav-links {
+  flex: 1;
+  margin-right: 7.5%;
+  list-style: none;
+  text-align: right;
+  line-height: 75px;
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.nav-links a,
+a:visited,
+a:hover,
+a:active {
+  padding: 10px;
+  color: inherit;
+  /* these settings will prevent the links from changing colors - easier to see on background */
+}
