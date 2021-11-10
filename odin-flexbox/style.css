@@ -88,6 +88,7 @@ a:active {
   margin: auto;
   width: 100%;
   gap: 50px;
+  padding-bottom: 5%;
 }
 
 .section2 h2 {
@@ -115,4 +116,81 @@ a:active {
 .section2-item {
   margin: 10px;
   width: 100px;
+}
+
+/* section 3 */
+
+.section3 {
+  background-color: #e5e7eb;
+  /*doesn't really match image, but this is the code on the style guide*/
+  padding: 3% 22% 3% 22%;
+}
+
+.quote {
+  font-size: 36px;
+  font-style: italic;
+  color: #1f2937;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.author {
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 0px;
+  margin-top: 0px;
+  text-align: right;
+}
+
+/* section 4 (call to action) */
+
+.section4-container {
+  background-color: #3882f6;
+  margin: 5% 10% 5% 10%;
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 66%;
+  border-radius: 10px;
+  color: white;
+  padding: 2% 5% 2% 5%;
+}
+
+.section4-item {
+  flex: 1;
+  justify-content: center;
+  min-height: 100px;
+  align-items: center;
+  line-height: 1px;
+}
+
+.section4 button {
+  margin-top: 7%;
+  margin-left: 50%;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: #3882f6;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 25%;
+  height: 50%;
+}
+
+.section4 h2 {
+  flex: 1;
+  margin-top: 45px;
+  align-items: center;
+}
+
+/* footer */
+
+footer {
+  background-color: #1f2937;
+  color: white;
+  height: 75px;
+  line-height: 75px;
+  /* matching height to line height vertically centers text for only 1 line */
+  text-align: center;
 }
