@@ -32,6 +32,54 @@ a:active {
   /* these settings will prevent the links from changing colors - easier to see on background */
 }
 
+/* section 1*/
+
+.section1-container {
+  display: flex;
+  background-color: #1f2937;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 5%;
+}
+
+.section1-item {
+  flex: 1;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+.section1-item h1 {
+  font-size: 48px;
+  font-weight: bolder;
+  color: #f9faf8;
+  margin-bottom: 0px;
+}
+
+.section1-item p {
+  font-size: 18px;
+  color: #e5e7eb;
+  margin-top: 0px;
+}
+
+.section1-item button {
+  background-color: #3882f6;
+  color: white;
+  width: 33%;
+  height: 16%;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.placeholder {
+  background-color: gray;
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* section 2*/
 .section2-container {
   display: flex;
