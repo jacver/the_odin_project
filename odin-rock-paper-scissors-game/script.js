@@ -21,4 +21,25 @@ const playerSelection = function () {
   return userAnswer;
 };
 
-console.log(computerPlay(), playerSelection());
+// game round
+const playRound = function (playerSelection, computerSelection) {
+  // player wins:
+  if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    return 'You win! Rocks smash scissors!';
+  } else if ((playerSelection = 'paper' && computerSelection === 'rock')) {
+    return 'You win! Paper covers rock!';
+  } else if ((playerSelection = 'scissors' && computerSelection === 'paper')) {
+    return 'You win! Scissors cut paper!';
+    // computer wins:
+  } else if ((computerSelection = 'paper' && playerSelection === 'rock')) {
+    return 'You lose! Paper covers rock!';
+  } else if ((computerSelection = 'rock' && playerSelection === 'scissors')) {
+    return 'You lose! Rocks smash scissors!';
+  } else if ((computerSelection = 'scissors' && playerSelection === 'paper')) {
+    return 'You lose! Scissors cut paper!';
+  } else if (computerSelection === playerSelection) {
+    return 'Tie! Go again.';
+  } // tie
+};
+
+playRound();
