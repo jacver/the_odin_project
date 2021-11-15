@@ -1,7 +1,7 @@
 'use strict';
 
 // player's choice
-const playerSelection = function () {
+const player = function () {
   const userAnswer = prompt('Rock, paper, or scissors?').toLowerCase();
   // always set user input to lowercase for comparison ease
   console.log(userAnswer);
@@ -21,8 +21,9 @@ const computerPlay = function () {
   }
 };
 
-// game round
+// one round of play
 const playRound = function (playerSelection, computerSelection) {
+  // this runs one round of play
   // player wins:
   if (computerSelection === 'rock' && playerSelection === 'scissors') {
     return 'You lose! Rocks smash scissors!';
@@ -42,7 +43,13 @@ const playRound = function (playerSelection, computerSelection) {
   } // tie
 };
 
-// to test this function run the following:
-// const computerSelection = computerPlay();
-// console.log('computer play: ' + computerSelection);
-// console.log(playRound(playerSelection(), computerSelection));
+const playerSelection = player();
+const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
+
+const game = function () {
+  const games = 5;
+  // insert functions here
+};
+
+game();
