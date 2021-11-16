@@ -1,10 +1,11 @@
 'use strict';
 
 // player's choice
-const player = function () {
-  const userAnswer = prompt('Rock, paper, or scissors?').toLowerCase();
+const playerPlay = function () {
+  const userAnswer = prompt('Rock, paper, or scissors?').trim().toLowerCase();
   // always set user input to lowercase for comparison ease
-  console.log(userAnswer);
+  // trim() to remove white space
+  console.log('USER: ' + userAnswer);
   return userAnswer;
 };
 
@@ -13,10 +14,14 @@ const computerPlay = function () {
   let x = Math.floor(Math.random() * 3);
   // returns a number between 0-2
   if (x === 0) {
+    console.log('PC: rock');
+    // the console logs here log it, but you also need to return it
     return 'rock';
   } else if (x === 1) {
+    console.log('PC: paper');
     return 'paper';
   } else if (x === 2) {
+    console.log('PC: scissors');
     return 'scissors';
   }
 };
@@ -43,13 +48,6 @@ const playRound = function (playerSelection, computerSelection) {
   } // tie
 };
 
-const playerSelection = player();
-const computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
-
-const game = function () {
-  const games = 5;
-  // insert functions here
-};
-
-game();
+let playerSelection = playerPlay();
+let computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
