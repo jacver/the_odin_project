@@ -1,0 +1,29 @@
+body {
+  font-size: 5rem;
+}
+
+nav {
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 7rem;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 25rem;
+}
+
+.player-func,
+.ai-func {
+  width: 100%;
+  text-align: center;
+}
+
+.scoreboard {
+  max-width: 80%;
+  margin: auto;
+  text-align: center;
+}
