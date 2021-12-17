@@ -14,11 +14,11 @@ const computerPlay = function () {
   let x = Math.floor(Math.random() * 3);
   // returns a number between 0-2
   if (x === 0) {
-    console.log('PC: rock');
+    // console.log('PC: rock');
     // the console logs here log it, but you also need to return it
     return 'rock';
   } else if (x === 1) {
-    console.log('PC: paper');
+    // console.log('PC: paper');
     return 'paper';
   } else if (x === 2) {
     console.log('PC: scissors');
@@ -29,6 +29,8 @@ const computerPlay = function () {
 // one round of play
 const playRound = function (playerSelection, computerSelection) {
   // this runs one round of play
+  playerPlay();
+  computerPlay();
   // player wins:
   if (computerSelection === 'rock' && playerSelection === 'scissors') {
     return 'You lose! Rocks smash scissors!';
@@ -50,4 +52,6 @@ const playRound = function (playerSelection, computerSelection) {
 
 let playerSelection = playerPlay();
 let computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
+
+playRound();
