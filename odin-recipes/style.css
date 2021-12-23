@@ -4,6 +4,8 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  max-width: 80%;
+  margin: auto;
 }
 
 section,
