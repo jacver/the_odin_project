@@ -27,3 +27,16 @@ main {
   margin: auto;
   text-align: center;
 }
+
+/* player selection buttons */
+
+.player-choice-rock,
+.player-choice-paper,
+.player-choice-scissors {
+  margin-top: 3rem;
+  border: none;
+  background-color: white;
+  font-size: 4rem;
+  letter-spacing: 2rem;
+  cursor: pointer;
+}
