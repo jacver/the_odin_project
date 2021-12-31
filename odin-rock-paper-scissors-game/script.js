@@ -166,12 +166,10 @@ const scoring = function (result) {
 
   // determine if game is over
   if (playerScore === 5) {
-    console.log(`You win ${playerScore} to ${computerScore}`);
+    alert(`You win ${playerScore} to ${computerScore}`);
   } else if (computerScore === 5) {
-    console.log(`You lose ${computerScore} to ${playerScore}`);
+    alert(`You lose ${computerScore} to ${playerScore}`);
   }
-
-  // if over display message
 };
 
 // pushing selections into history
