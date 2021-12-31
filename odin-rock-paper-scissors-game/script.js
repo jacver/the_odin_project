@@ -10,20 +10,36 @@ let labelSelections = document.getElementById("selections");
 let labelScoreboard = document.getElementById("scoreboard");
 let labelPlayerScore = document.querySelector(".player-score");
 let labelComputerScore = document.querySelector(".computer-score");
+let labelPlayerHistory = document.querySelector(".player-func");
+let labelComputerHistory = document.querySelector(".ai-func");
 
 // external declarations
 
-let playerSelection, result, playerScore, computerScore;
+let playerSelection,
+  result,
+  playerScore,
+  computerScore,
+  playerHistory,
+  computerHistory;
 
 // game init
 
-labelSelections.textContent = "Rock, paper, or scissors?";
+const init = function () {
+  labelSelections.textContent = "Rock, paper, or scissors?";
 
-labelComputerScore.textContent = 0;
-labelPlayerScore.textContent = 0;
+  labelComputerScore.textContent = 0;
+  labelPlayerScore.textContent = 0;
+  labelPlayerHistory.textContent = "";
+  labelComputerHistory.textContent = "";
 
-playerScore = 0;
-computerScore = 0;
+  playerScore = 0;
+  computerScore = 0;
+
+  playerHistory = [];
+  computerHistory = [];
+};
+
+init();
 
 // functions
 
@@ -54,6 +70,8 @@ btnRock.addEventListener("click", function () {
   labelSelections.textContent = `✊ to ${computerSelection}`;
   // score
   scoring(result);
+  // history
+  history(playerSelection, computerSelection);
 });
 
 btnPaper.addEventListener("click", function () {
@@ -68,6 +86,8 @@ btnPaper.addEventListener("click", function () {
   labelSelections.textContent = `🤚 to ${computerSelection}`;
   // score
   scoring(result);
+  // history
+  history(playerSelection, computerSelection);
 });
 
 btnScissors.addEventListener("click", function () {
@@ -82,6 +102,8 @@ btnScissors.addEventListener("click", function () {
   labelSelections.textContent = `✌ to ${computerSelection}`;
   // score
   scoring(result);
+  // history
+  history(playerSelection, computerSelection);
 });
 
 // one round of play
@@ -136,19 +158,28 @@ const scoring = function (result) {
   } else {
     console.log("tie round");
   }
+
   // change score on UI
   console.log(playerScore, computerScore);
   labelPlayerScore.textContent = playerScore;
   labelComputerScore.textContent = computerScore;
+
+  // determine if game is over
+  if (playerScore === 5) {
+    console.log(`You win ${playerScore} to ${computerScore}`);
+  } else if (computerScore === 5) {
+    console.log(`You lose ${computerScore} to ${playerScore}`);
+  }
+
+  // if over display message
 };
 
-// after all rounds - final score
-if (playerScore > computerScore) {
-  console.log(`You win! ${playerScore} to ${computerScore}`);
-}
-if (playerScore < computerScore) {
-  console.log(`You lose! ${playerScore} to ${computerScore}`);
-}
-if (computerScore > 0 && computerScore === playerScore) {
-  console.log(`Game ends in a tie! ${playerScore} to ${computerScore}`);
-}
+// pushing selections into history
+const history = function (playerSel, computerSel) {
+  // push to array
+  playerHistory.push(playerSel);
+  computerHistory.unshift(computerSel);
+  // display array on UI
+  labelPlayerHistory.textContent = playerHistory;
+  labelComputerHistory.textContent = computerHistory;
+};
