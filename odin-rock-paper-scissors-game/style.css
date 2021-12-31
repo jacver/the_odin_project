@@ -5,25 +5,43 @@ body {
 nav {
   max-width: 80%;
   margin: auto;
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 
-main {
+#selection-columns {
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
-  height: 25rem;
+  height: 12.5rem;
 }
 
 .player-func,
 .ai-func {
   width: 100%;
+  margin: 1rem;
+  padding: 0;
   text-align: center;
+  font-size: 1.5rem;
 }
 
-.scoreboard {
+#selections,
+#scoreboard {
   max-width: 80%;
   margin: auto;
   text-align: center;
+  font-size: 3rem;
+}
+
+/* player selection buttons */
+
+.player-choice-rock,
+.player-choice-paper,
+.player-choice-scissors {
+  margin-top: 3rem;
+  border: none;
+  background-color: white;
+  font-size: 4rem;
+  letter-spacing: 4rem;
+  cursor: pointer;
 }
