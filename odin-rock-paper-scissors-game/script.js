@@ -100,10 +100,10 @@ btnScissors.addEventListener("click", function () {
   // play round
   playRound(playerSelection, computerSelection);
   labelSelections.textContent = `✌ to ${computerSelection}`;
-  // score
-  scoring(result);
   // history
   history(playerSelection, computerSelection);
+  // score
+  scoring(result);
 });
 
 // one round of play

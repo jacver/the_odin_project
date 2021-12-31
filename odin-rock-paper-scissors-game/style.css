@@ -1,5 +1,7 @@
 body {
   font-size: 5rem;
+  background-color: honeydew;
+  /* if this is changes, also change the background on the actual buttons */
 }
 
 nav {
@@ -15,13 +17,13 @@ nav {
   margin-right: 10%;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  height: 15rem;
+  height: 20rem;
 }
 
 .player-func,
 .ai-func {
   width: 80%;
-  height: 15rem;
+  height: 20rem;
   margin: 1rem;
   padding: 0;
   font-size: 2rem;
@@ -53,7 +55,7 @@ nav {
 .player-choice-scissors {
   margin-top: 3rem;
   border: none;
-  background-color: white;
+  background-color: honeydew;
   font-size: 4rem;
   letter-spacing: 4rem;
   cursor: pointer;
