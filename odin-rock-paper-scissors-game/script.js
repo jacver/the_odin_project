@@ -1,22 +1,29 @@
-'use strict';
+"use strict";
 
 // Selectors
 
-const btnRock = document.querySelector('.player-choice-rock');
-const btnPaper = document.querySelector('.player-choice-paper');
-const btnScissors = document.querySelector('.player-choice-scissors');
+const btnRock = document.querySelector(".player-choice-rock");
+const btnPaper = document.querySelector(".player-choice-paper");
+const btnScissors = document.querySelector(".player-choice-scissors");
 
-let labelSelections = document.getElementById('selections');
-let labelScoreboard = document.getElementById('scoreboard');
+let labelSelections = document.getElementById("selections");
+let labelScoreboard = document.getElementById("scoreboard");
+let labelPlayerScore = document.querySelector(".player-score");
+let labelComputerScore = document.querySelector(".computer-score");
 
-// pre-game
-let playerSelection = '';
+// external declarations
 
-let playerScore = 0;
-let computerScore = 0;
+let playerSelection, result, playerScore, computerScore;
 
-labelSelections.textContent = 'Rock, paper, or scissors?';
-labelScoreboard.textContent = `Player: ${playerScore} Computer: ${computerScore}`;
+// game init
+
+labelSelections.textContent = "Rock, paper, or scissors?";
+
+labelComputerScore.textContent = 0;
+labelPlayerScore.textContent = 0;
+
+playerScore = 0;
+computerScore = 0;
 
 // functions
 
@@ -25,85 +32,114 @@ const computerPlay = function () {
   let x = Math.floor(Math.random() * 3);
   // returns a number between 0-2
   if (x === 0) {
-    return '✊';
+    return "✊";
   } else if (x === 1) {
-    return '🤚';
+    return "🤚";
   } else if (x === 2) {
-    return '✌';
+    return "✌";
   }
 };
 
-// player selection buttons
+// invoking playRound()
 
-btnRock.addEventListener('click', function () {
+btnRock.addEventListener("click", function () {
   // player pick
-  let playerSelection = 'rock';
+  let playerSelection = "✊";
   console.log(playerSelection);
   // ai pick
   let computerSelection = computerPlay();
   console.log(computerSelection);
   // play round
+  playRound(playerSelection, computerSelection);
   labelSelections.textContent = `✊ to ${computerSelection}`;
+  // score
+  scoring(result);
 });
 
-btnPaper.addEventListener('click', function () {
+btnPaper.addEventListener("click", function () {
   //player pick
-  let playerSelection = 'paper';
+  let playerSelection = "🤚";
+  console.log(playerSelection);
   // ai pick
   let computerSelection = computerPlay();
+  console.log(computerSelection);
   // play round
-  labelSelections.textContent = `🤚 to ${computerSelection}`;
   playRound(playerSelection, computerSelection);
+  labelSelections.textContent = `🤚 to ${computerSelection}`;
+  // score
+  scoring(result);
 });
 
-btnScissors.addEventListener('click', function () {
+btnScissors.addEventListener("click", function () {
   // player pick
-  let playerSelection = 'scissors';
+  let playerSelection = "✌";
+  console.log(playerSelection);
   // ai pick
   let computerSelection = computerPlay();
+  console.log(computerSelection);
   // play round
-  labelSelections.textContent = `✌ to ${computerSelection}`;
   playRound(playerSelection, computerSelection);
+  labelSelections.textContent = `✌ to ${computerSelection}`;
+  // score
+  scoring(result);
 });
 
 // one round of play
 
 const playRound = function (playerSelection, computerSelection) {
-  if (playerSelection === 'rock') {
-    if (computerSelection === '✌') {
-      playerScore++;
-      return 'win';
-    } else if (computerSelection === '🤚') {
-      return 'lose';
+  if (playerSelection === "✊") {
+    if (computerSelection === "✌") {
+      result = "win";
+    } else if (computerSelection === "🤚") {
+      result = "lose";
     } else {
-      return 'tie';
+      result = "tie";
     }
   }
-  if (playerSelection === 'paper') {
-    if (computerSelection === '✊') {
-      return 'win';
-    } else if (computerSelection === '✌') {
-      return 'lose';
+  if (playerSelection === "🤚") {
+    if (computerSelection === "✊") {
+      result = "win";
+    } else if (computerSelection === "✌") {
+      result = "lose";
     } else {
-      return 'tie';
+      result = "tie";
     }
   }
-  if (playerSelection === 'scissors') {
-    if (computerSelection === '🤚') {
-      return 'win';
-    } else if (computerSelection === '✊') {
-      return 'lose';
+  if (playerSelection === "✌") {
+    if (computerSelection === "🤚") {
+      result = "win";
+    } else if (computerSelection === "✊") {
+      result = "lose";
     } else {
-      return 'tie';
+      result = "tie";
     }
+    return result;
   }
 
-  // scoring
-  if (result === 'win') {
-  }
-  if (result === 'lose') {
+  // // scoring
+  // if (result === "win") {
+  //   playerScore++;
+  // }
+  // if (result === "lose") {
+  //   computerScore++;
+  // }
+};
+
+const scoring = function (result) {
+  // determine result
+  if (result === "win") {
+    playerScore++;
+    console.log(result);
+  } else if (result === "lose") {
     computerScore++;
+    console.log(result);
+  } else {
+    console.log("tie round");
   }
+  // change score on UI
+  console.log(playerScore, computerScore);
+  labelPlayerScore.textContent = playerScore;
+  labelComputerScore.textContent = computerScore;
 };
 
 // after all rounds - final score

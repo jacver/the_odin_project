@@ -27,10 +27,13 @@ nav {
 
 #selections,
 #scoreboard {
-  max-width: 80%;
-  margin: auto;
+  display: flex;
+  max-width: 100%;
   text-align: center;
+  justify-content: center;
   font-size: 3rem;
+  margin: auto;
+  gap: 2rem;
 }
 
 /* player selection buttons */
