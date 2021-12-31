@@ -177,9 +177,9 @@ const scoring = function (result) {
 // pushing selections into history
 const history = function (playerSel, computerSel) {
   // push to array
-  playerHistory.push(playerSel);
+  playerHistory.unshift(playerSel);
   computerHistory.unshift(computerSel);
   // display array on UI
-  labelPlayerHistory.textContent = playerHistory;
-  labelComputerHistory.textContent = computerHistory;
+  labelPlayerHistory.textContent = playerHistory.join("\n");
+  labelComputerHistory.textContent = computerHistory.join("\n");
 };
