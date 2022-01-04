@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+/* grid button settings */
+
+.btn-new-grid {
+  position: absolute;
+  left: 50%;
+  top: 5em;
+  transform: translateX(-50%);
+}
+
+/* grid settings */
+
+.grid-container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: repeat(16, 25px);
+  grid-template-columns: repeat(16, 25px);
+  /* figure out how to move grid-template- to javascript so grid size is dynamic */
+  justify-content: center;
+  position: relative;
+  top: 8em;
+}
+
+.grid-item {
+  padding: 1em;
+  border: black 1px solid;
+  width: 1em;
+}
