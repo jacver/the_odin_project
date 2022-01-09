@@ -8,9 +8,7 @@
 // Selectors
 
 const btnNewGrid = document.querySelector(".btn-new-grid");
-
 const gridContainer = document.querySelector(".grid-container");
-const cell = document.querySelector(".grid-item");
 
 // Functions
 
@@ -25,10 +23,15 @@ const createGrid = function (rows, columns) {
 };
 createGrid(16, 16);
 
-const mouseHover = function () {
-  cell.style.backgroundColor = "orange";
-};
-// TO DO - Imeplement mouse hover feature. Make sure this is linked to the actual grid items, i dont think it is
-mouseHover();
+// cell selector
+const cell = document.querySelector(".grid-item");
 
-const clearGrid = function () {};
+// ONLY WORKING ON TOP LEFT CELL
+const hover = function () {
+  cell.addEventListener("mouseenter", function () {
+    cell.style.background = "black";
+  });
+};
+hover();
+
+// const clearGrid = function () {};

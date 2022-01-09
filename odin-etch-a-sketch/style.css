@@ -29,3 +29,7 @@
   border: black 1px solid;
   width: 1em;
 }
+
+.hover {
+  background-color: black;
+}
