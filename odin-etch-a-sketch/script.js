@@ -10,7 +10,7 @@
 const btnNewGrid = document.querySelector(".btn-new-grid");
 const gridContainer = document.querySelector(".grid-container");
 
-// Functions
+// Creating Grid
 
 const createGrid = function (rows, columns) {
   gridContainer.style.setProperty("--grid-rows", rows);
@@ -23,7 +23,8 @@ const createGrid = function (rows, columns) {
 };
 createGrid(16, 16);
 
-// cell selector
+// Trailing effect
+
 const cells = document.querySelectorAll(".grid-item");
 
 cells.forEach((cell) => {
@@ -32,11 +33,12 @@ cells.forEach((cell) => {
   });
 });
 
-// const hover = function () {
-//   cell.addEventListener("mouseenter", function () {
-//     cell.classList.add("hover");
-//   });
-// };
-// hover();
+// Clearing Grid
 
-// const clearGrid = function () {};
+// working on removing the class from each div that has the hover effect added
+
+const clearGrid = btnNewGrid.addEventListener("click", function () {
+  cells.forEach((cell) => {
+    cell.classList.remove("hover");
+  });
+});
