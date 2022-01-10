@@ -24,14 +24,19 @@ const createGrid = function (rows, columns) {
 createGrid(16, 16);
 
 // cell selector
-const cell = document.querySelector(".grid-item");
+const cells = document.querySelectorAll(".grid-item");
 
-// ONLY WORKING ON TOP LEFT CELL
-const hover = function () {
-  cell.addEventListener("mouseenter", function () {
-    cell.style.background = "black";
+cells.forEach((cell) => {
+  cell.addEventListener("mouseenter", () => {
+    cell.classList.add("hover");
   });
-};
-hover();
+});
+
+// const hover = function () {
+//   cell.addEventListener("mouseenter", function () {
+//     cell.classList.add("hover");
+//   });
+// };
+// hover();
 
 // const clearGrid = function () {};

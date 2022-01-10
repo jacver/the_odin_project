@@ -15,7 +15,7 @@
 
 .grid-container {
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 0.8em;
   grid-template-rows: repeat(16, 25px);
   grid-template-columns: repeat(16, 25px);
   /* figure out how to move grid-template- to javascript so grid size is dynamic */
@@ -24,7 +24,8 @@
   top: 8em;
 }
 
-.grid-item {
+.grid-item,
+.hover {
   padding: 1em;
   border: black 1px solid;
   width: 1em;
