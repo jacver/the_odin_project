@@ -35,10 +35,18 @@ cells.forEach((cell) => {
 
 // Clearing Grid
 
-// working on removing the class from each div that has the hover effect added
+// /// /// WORKING ON: deleting entire grid to make a new one with measurements from prompt
 
 const clearGrid = btnNewGrid.addEventListener("click", function () {
+  // clear cells
   cells.forEach((cell) => {
     cell.classList.remove("hover");
   });
+
+  // prompt user for new grid size
+  let rows = prompt("How many squares would you like on each side?");
+  let columns = rows;
+
+  // create new grid with user specs
+  createGrid(rows, columns);
 });
