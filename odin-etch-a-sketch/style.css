@@ -15,15 +15,16 @@
 
 .grid-container {
   display: grid;
-  grid-gap: 0.8em;
+  grid-gap: 0.65em;
   grid-template-rows: repeat(16, 25px);
   grid-template-columns: repeat(16, 25px);
   /* figure out how to move grid-template- to javascript so grid size is dynamic */
   justify-content: center;
   position: relative;
   margin: 0 auto;
+  margin-bottom: 10px;
   top: 8em;
-  max-width: 960px;
+  width: 960px;
 }
 
 .grid-item,
