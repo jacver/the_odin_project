@@ -61,3 +61,7 @@ const clearGrid = btnNewGrid.addEventListener('click', function () {
 
   createGrid(rows, columns);
 });
+
+let placeHolder = function (x) {
+  //new grid
+};
