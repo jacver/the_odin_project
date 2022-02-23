@@ -2,38 +2,18 @@
   box-sizing: border-box;
 }
 
-/* grid button settings */
-
-.btn-new-grid {
-  position: absolute;
-  left: 50%;
-  top: 5em;
-  transform: translateX(-50%);
+:root {
+  --columns-row: 2;
 }
 
-/* grid settings */
-
-.grid-container {
+#container {
   display: grid;
-  grid-gap: 0.65em;
-  grid-template-rows: repeat(16, 25px);
-  grid-template-columns: repeat(16, 25px);
-  /* figure out how to move grid-template- to javascript so grid size is dynamic */
-  justify-content: center;
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  top: 8em;
-  width: 960px;
+  grid-template-columns: repeat(var(--columns-row), 1fr);
+  grid-template-rows: repeat(var(--columns-row), 1fr);
+  width: 500px;
+  height: 500px;
 }
 
-.grid-item,
-.hover {
-  padding: 1em;
-  border: black 1px solid;
-  width: 1em;
-}
-
-.hover {
-  background-color: black;
+div {
+  border: 1px solid #000;
 }
